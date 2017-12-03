@@ -10,14 +10,15 @@
       "loopback/common/mixins",
       "loopback/server/mixins",
       "../common/mixins",
-      "./mixins"
+      "./mixins",
+      "../node_modules/loopback-ds-timestamp-mixin"
     ]
   },
   "User": {
     "dataSource": "db"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "ACL": {
@@ -45,6 +46,10 @@
   },
   "Foto": {
     "dataSource": "mongo",
+    "public": true
+  },
+  "ServicioArchivos": {
+    "dataSource": "fotos",
     "public": true
   }
 }

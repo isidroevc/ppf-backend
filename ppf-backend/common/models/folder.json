@@ -10,10 +10,20 @@
     "padre": {
       "type": "object",
       "required": true
+    },
+    "nombre": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "usuarioId",
+      "disableInclude": false
+    }
+  },
   "acls": [],
   "methods": {}
 }

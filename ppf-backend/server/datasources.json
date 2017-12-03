@@ -12,5 +12,11 @@
     "name": "mongo",
     "user": "",
     "connector": "mongodb"
+  },
+  "fotos": {
+    "name": "fotos",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "/var/www/ppf-fotos"
   }
 }

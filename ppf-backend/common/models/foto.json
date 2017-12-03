@@ -7,13 +7,23 @@
     "validateUpsert": true
   },
   "properties": {
-    "ruta": {
+    "nombre": {
+      "type": "string"
+    },
+    "idUnico": {
       "type": "string",
       "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "folder": {
+      "type": "belongsTo",
+      "model": "folder",
+      "foreignKey": "folderId",
+      "disableInclude": false
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -1,10 +1,13 @@
 {
   "name": "Usuario",
   "plural": "Usuarios",
-  "base": "PersistedModel",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": true
   },
   "properties": {
     "nombre": {
@@ -19,7 +22,37 @@
     }
   },
   "validations": [],
-  "relations": {},
-  "acls": [],
+  "relations": {
+    "folders": {
+      "type": "hasMany",
+      "model": "Folder",
+      "diableInclude": false
+    },
+    "fotos": {
+      "type": "hasMany",
+      "model": "Foto",
+      "diableInclude": false
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "crearFolder"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "crearFoto"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
